@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1523372102243-c9426fc31b88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.action-area {
+    background-color: rgb(0, 0, 0, 0.5);
+    margin-top: 22vh;
+    width: fit-content;
+    padding: 50px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-family: 'Lato';
+    color: white;
+    font-size: 26px;
+}
+
+h1 {
+    font-family: 'Lato';
+    color: white;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+#stopTimer {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: 0;
+    font-size: 16px;
+    font-family: 'Lato';
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#picker {
+    background-color: white;
+    border: 0;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: 'Lato';
+    margin-right: 20px;
+}
+
+#submit {
+    background-color: white;
+    border-radius: 8px;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Lato';
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    margin-top: 10px;  
+}
+
+#submit:hover {
+    background-color: black;
+    color: white;
+}

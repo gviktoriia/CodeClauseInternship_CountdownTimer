@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Countdown</title>
+  </head>
+  <body>
+    <div class="action-area">
+      <div class="input-field">
+        <form id="dateForm">
+          <h2>Enter the date of your future event</h2>
+          <input id="picker" type="datetime-local" required />
+          <button id="submit">OK</button>
+        </form>
+      </div>
+      <div class="timer">
+        <h1 id="date">Time remaining:</h1>
+        <button type="button" id="stopTimer">Clear timer</button>
+      </div>
+    </div>
+    <script>
+      let countdownInterval;
+      function updateDate(event) {
+        event.preventDefault();
+        const current_date = new Date();
+        var picked_date = new Date(document.getElementById("picker").value);
+        var timer = picked_date.getTime() - current_date.getTime();
+        if (isValidDate(picked_date)) {
+          updateTimer(timer);
+        } else {
+          alert("Please enter a valid future date.");
+        }
+      }
+
+      function isValidDate(dateString) {
+        var picked_date = new Date(dateString).getTime();
+        var current_date = new Date().getTime();
+        return !isNaN(picked_date) && picked_date > current_date;
+      }
+
+      function updateTimer(time) {
+        var seconds = Math.floor(time / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+
+        hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+
+        var timerString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        document.getElementById("date").textContent =
+          "Time remaining: " + timerString;
+
+        setTimeout(function () {
+          updateTimer(time - 1000);
+        }, 1000);
+      }
+
+      document
+        .getElementById("dateForm")
+        .addEventListener("submit", updateDate);
+
+      document
+        .getElementById("stopTimer")
+        .addEventListener("click", function () {
+          window.location.reload();
+        });
+    </script>
+  </body>
+</html>
